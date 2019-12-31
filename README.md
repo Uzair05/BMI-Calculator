@@ -12,11 +12,9 @@ Compile all the java files and run using the command interface.
 
 You can use the code.
 ```
-cd ./src/
-javac *.java
-mv *.class ../bin
-cd ../bin/
-java Main.class
+javac ./src/*.java
+mv ./src/*.class ./bin/
+java ./bin/Main.class
 ```
 
 ## Upcoming Updates
