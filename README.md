@@ -14,6 +14,8 @@ You can use the code.
 ```
 cd ./src/
 javac *.java
+mv *.class ../bin
+cd ../bin/
 java Main.class
 ```
 
