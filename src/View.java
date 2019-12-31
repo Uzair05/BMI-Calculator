@@ -1,8 +1,22 @@
 import java.awt.*;
 import javax.swing.*;
-
+/**
+ * This class allows for the creation and setup of the GUI and its layout.
+ * @author <a href="https://Uzair05.github.io" target="_blank">Uzair Bin Asim</a>.
+ * @since 31/12/2019
+ * @version 1.2
+ * 
+ * <div>
+ * 	Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> 
+ * from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+ * </div>
+ * 
+ */
 public class View{
-	
+	/**
+	 * Constructor Class.<br>
+	 * Calls for {@code this.start()} to allow building and setup of GUI.
+	 */
 	public View(){
 		this.start();
 	}
@@ -23,7 +37,7 @@ public class View{
 		frame = new JFrame();
 		frame.setTitle("BMI Calculator");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(400, 400);
+		frame.setSize(400, 250);
 		frame.add(this.mainPanel(), BorderLayout.CENTER);
 		frame.setLocationRelativeTo(null); 
 		/*Add menu Bar*/
@@ -72,7 +86,7 @@ public class View{
 	
 	
 	/**
-	 * 
+	 * This Method deals with the display of pop ups concerning Medical Emergencies.
 	 * @param s Input string holding the value of the emergency message.
 	 */
 	public void emergencyNotification(String s) {
@@ -84,18 +98,38 @@ public class View{
 				this.icon
 				);
 	}
+	/**
+	 * This Method deals with setting the notification label.
+	 * @param s Input string holding the value of the message.
+	 */
 	public void setNotificationsLabel(String s) {
 		this.notifications.setText(s);
 	}
+	/**
+	 * This method returns the JButton which allows the user to submit his details.
+	 * @return {@code this.results_button} The JButton in the GUI.
+	 */
 	public JButton getResultsButton() {
 		return this.results_button;
 	}
+	/**
+	 * This method is concerned with setting the results label to the desired Text.
+	 * @param s Input string holding the value of the message.
+	 */
 	public void setResultsString(String s) {
 		this.output_results.setText(s);
 	}
+	/**
+	 * This method returns the JTextField which allows the user to input his details.
+	 * @return {@code this.input_weight} The JTextField in the GUI which allows user to input their weight.
+	 */
 	public JTextField getInputWeight() {
 		return this.input_weight;
 	}
+	/**
+	 * This method returns the JTextField which allows the user to input his details.
+	 * @return {@code this.input_height} The JTextField in the GUI which allows user to input their height.
+	 */
 	public JTextField getInputHeight() {
 		return this.input_height;
 	}

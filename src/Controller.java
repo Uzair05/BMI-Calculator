@@ -1,12 +1,26 @@
 import java.awt.event.*;
+
+/**
+ * This class is involved in creating the instance of View.java object and assigning commands and controls to its elements. 
+ * @author <a href="https://Uzair05.github.io" target="_blank">Uzair Bin Asim</a>.
+ * @since 31/12/2019
+ * @version 1.2
+ */
 public class Controller{
 	private View view;
+	/**
+	 * Constructor class.<br>Calls for assigns view instance to its own local instance.
+	 * @param view Instance of Object View.java
+	 */
 	public Controller(View view) {
 		this.view = view;
 	}
 	
 	private ActionListener resultsListener;
 	
+	/**
+	 * Assigns Controls and commands to elements in view instance.
+	 */
 	public void start() {
 		this.resultsListener = new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
@@ -32,7 +46,7 @@ public class Controller{
 		}else if (BMI <= 24.9) {
 			s = "You are normal";
 		}else if(BMI<=29.9) {
-			s="You are overwight";
+			s="You are Overweight";
 		}else{
 			s="You are Obese";
 			this.view.emergencyNotification("You are Obese.\nIt is suggested that you seek medical help.");
