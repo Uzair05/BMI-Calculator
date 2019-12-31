@@ -1,7 +1,8 @@
 import java.awt.event.*;
 
 /**
- * This class is involved in creating the instance of View.java object and assigning commands and controls to its elements. 
+ * This class is involved in creating the instance of View.java object and assigning commands and controls to its elements. <br>
+ * Standards Derived from <a href="https://www.nhs.uk/common-health-questions/lifestyle/what-is-the-body-mass-index-bmi/" target="_blank">NHS</a><br>
  * @author <a href="https://Uzair05.github.io" target="_blank">Uzair Bin Asim</a>.
  * @since 31/12/2019
  * @version 1.2
@@ -15,9 +16,9 @@ public class Controller{
 	public Controller(View view) {
 		this.view = view;
 	}
-	
+
 	private ActionListener resultsListener;
-	
+
 	/**
 	 * Assigns Controls and commands to elements in view instance.
 	 */
@@ -37,7 +38,7 @@ public class Controller{
 		};
 		this.view.getResultsButton().addActionListener(resultsListener);
 	}
-	
+
 	private String getWarnings() {
 		double BMI = this.getBMI();
 		String s = "";
@@ -54,7 +55,7 @@ public class Controller{
 		return s;
 	}
 	private String getResults() {
-		String s = String.format("%.2f", this.getBMI()); 
+		String s = String.format("%.2f", this.getBMI());
 		return s;
 	}
 	private boolean isValid() {
@@ -65,14 +66,14 @@ public class Controller{
 		if (this.view.getInputWeight().getText() == "") {
 			valid = false;
 		}
-		
+
 		try {
 			Double.parseDouble(this.view.getInputHeight().getText());
 			Double.parseDouble(this.view.getInputWeight().getText());
 		}catch(Exception ex){
 			valid = false;
 		}
-		
+
 		return valid;
 	}
 	private double getBMI() {
